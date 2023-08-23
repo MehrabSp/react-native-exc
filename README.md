@@ -3,7 +3,8 @@
 New React Native program error management library
 
 Inspired by: 
-[react-native-exception-handler]([https://github.com/a7ul/react-native-exception-handler])
+[react-native-exception-handler](https://github.com/a7ul/react-native-exception-handler)
+
 
 ## Installation
 
@@ -11,14 +12,36 @@ Inspired by:
 npm install react-native-exc
 ```
 
-## Usage
+## Usage example
 
 ```js
-import { multiply } from 'react-native-exc';
+import { setJSExceptionHandler, setNativeExceptionHandler } from 'react-native-exc';
+const errorHandler = (e: any, isFatal: any) => {
+  if (isFatal) {
+    Alert.alert(
+      'Unexpected error occurred',
+      `
+        Error: ${isFatal ? 'Fatal:' : ''} ${e.name} ${e.message}
 
-// ...
+        We will need to restart the app.
+        `,
+      [
+        {
+          text: 'Restart',
+          onPress: () => {
+            console.log('restart');
+          },
+        },
+      ]
+    );
+  } else {
+    console.log(e); // So that we can see it in the ADB logs in case of Android if needed
+  }
+};
 
-const result = await multiply(3, 7);
+setJSExceptionHandler(errorHandler);
+
+//...
 ```
 
 ## Contributing
@@ -31,4 +54,4 @@ MIT
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+MRB
