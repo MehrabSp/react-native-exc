@@ -5,7 +5,6 @@ New React Native program error management library
 Inspired by: 
 [react-native-exception-handler](https://github.com/a7ul/react-native-exception-handler)
 
-
 ## Installation
 
 ```sh
