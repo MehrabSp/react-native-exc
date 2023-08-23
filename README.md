@@ -11,6 +11,19 @@ Inspired by:
 npm install react-native-exc
 ```
 
+## Auto-Linking Setup (react-native >= 0.60)
+
+### iOS
+
+```bash
+$ cd ios
+$ pod install
+```
+
+### Android
+
+No further steps should be taken
+
 ## Usage example
 
 ```js
