@@ -10,6 +10,10 @@ Inspired by:
 ```sh
 npm install react-native-exc
 ```
+or
+```sh
+yarn add react-native-exc
+```
 
 ## Auto-Linking Setup (react-native >= 0.60)
 
